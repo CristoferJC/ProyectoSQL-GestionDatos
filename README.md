@@ -37,5 +37,6 @@ El proyecto está organizado en varios formularios y módulos:
 - Varios formularios adicionales para diferentes operaciones y mensajes
 
 ## Contacto
+Estudiante de 4 programación - Fundacion el Pilar
 [Cristofer Jeldes - CristoferJC]
 [isaiasjeldescalisto@gmail.com - https://github.com/CristoferJC]
