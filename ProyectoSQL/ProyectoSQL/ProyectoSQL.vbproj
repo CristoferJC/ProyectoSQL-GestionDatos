@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CCC32B4-FB4D-47D1-8D21-E9AA4C070CAD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ProyectoSQL.My.MyApplication</StartupObject>
+    <RootNamespace>ProyectoSQL</RootNamespace>
+    <AssemblyName>ProyectoSQL</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ProyectoSQL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ProyectoSQL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=9.0.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 9.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Siticone.UI">
+      <HintPath>..\..\..\..\Desktop\Siticone.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adver.Designer.vb">
+      <DependentUpon>Adver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Adver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adver4pro.Designer.vb">
+      <DependentUpon>Adver4pro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Adver4pro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdverAdmin.Designer.vb">
+      <DependentUpon>AdverAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdverAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdverReg.Designer.vb">
+      <DependentUpon>AdverReg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdverReg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adver4proUser.Designer.vb">
+      <DependentUpon>Adver4proUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Adver4proUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdverUser.Designer.vb">
+      <DependentUpon>AdverUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdverUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfEliminar.Designer.vb">
+      <DependentUpon>ConfEliminar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConfEliminar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfEliminar4pro.Designer.vb">
+      <DependentUpon>ConfEliminar4pro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConfEliminar4pro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfEliminarAdmin.Designer.vb">
+      <DependentUpon>ConfEliminarAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConfEliminarAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Correcto.Designer.vb">
+      <DependentUpon>Correcto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Correcto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CorrectoUser.Designer.vb">
+      <DependentUpon>CorrectoUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CorrectoUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datos.Designer.vb">
+      <DependentUpon>Datos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Datos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datos4pro.Designer.vb">
+      <DependentUpon>Datos4pro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Datos4pro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datos4proUser.Designer.vb">
+      <DependentUpon>Datos4proUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Datos4proUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosAdmin.Designer.vb">
+      <DependentUpon>DatosAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosBorr.Designer.vb">
+      <DependentUpon>DatosBorr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosBorr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosBorr4pro.Designer.vb">
+      <DependentUpon>DatosBorr4pro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosBorr4pro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosBorrAdmin.Designer.vb">
+      <DependentUpon>DatosBorrAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosBorrAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosIns.Designer.vb">
+      <DependentUpon>DatosIns.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosIns.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosIns4pro.Designer.vb">
+      <DependentUpon>DatosIns4pro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosIns4pro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosIns4proUser.Designer.vb">
+      <DependentUpon>DatosIns4proUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosIns4proUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosInsAdmin.Designer.vb">
+      <DependentUpon>DatosInsAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosInsAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosInsReg.Designer.vb">
+      <DependentUpon>DatosInsReg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosInsReg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosInsUser.Designer.vb">
+      <DependentUpon>DatosInsUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosInsUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosUser.Designer.vb">
+      <DependentUpon>DatosUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorFormato.Designer.vb">
+      <DependentUpon>ErrorFormato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorFormato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorFormatoMa.Designer.vb">
+      <DependentUpon>ErrorFormatoMa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorFormatoMa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorFormatoMaUser.Designer.vb">
+      <DependentUpon>ErrorFormatoMaUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorFormatoMaUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorFormatoUser.Designer.vb">
+      <DependentUpon>ErrorFormatoUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorFormatoUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorIn.Designer.vb">
+      <DependentUpon>ErrorIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorMatri.Designer.vb">
+      <DependentUpon>ErrorMatri.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMatri.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorMatriUser.Designer.vb">
+      <DependentUpon>ErrorMatriUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMatriUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorReg.Designer.vb">
+      <DependentUpon>ErrorReg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorReg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorRUT.Designer.vb">
+      <DependentUpon>ErrorRUT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorRUT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorRUTUser.Designer.vb">
+      <DependentUpon>ErrorRUTUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorRUTUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorUser.Designer.vb">
+      <DependentUpon>ErrorUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Errorv.Designer.vb">
+      <DependentUpon>Errorv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Errorv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Info.Designer.vb">
+      <DependentUpon>Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoUser.Designer.vb">
+      <DependentUpon>InfoUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InfoUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.vb">
+      <DependentUpon>Menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuUser.Designer.vb">
+      <DependentUpon>MenuUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenuUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Register.Designer.vb">
+      <DependentUpon>Register.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Register.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelDato.Designer.vb">
+      <DependentUpon>SelDato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelDato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelDato4pro.Designer.vb">
+      <DependentUpon>SelDato4pro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelDato4pro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelDatoAdmin.Designer.vb">
+      <DependentUpon>SelDatoAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelDatoAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Adver.resx">
+      <DependentUpon>Adver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adver4pro.resx">
+      <DependentUpon>Adver4pro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdverAdmin.resx">
+      <DependentUpon>AdverAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdverReg.resx">
+      <DependentUpon>AdverReg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adver4proUser.resx">
+      <DependentUpon>Adver4proUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdverUser.resx">
+      <DependentUpon>AdverUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfEliminar.resx">
+      <DependentUpon>ConfEliminar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfEliminar4pro.resx">
+      <DependentUpon>ConfEliminar4pro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfEliminarAdmin.resx">
+      <DependentUpon>ConfEliminarAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Correcto.resx">
+      <DependentUpon>Correcto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CorrectoUser.resx">
+      <DependentUpon>CorrectoUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datos.resx">
+      <DependentUpon>Datos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datos4pro.resx">
+      <DependentUpon>Datos4pro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datos4proUser.resx">
+      <DependentUpon>Datos4proUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosAdmin.resx">
+      <DependentUpon>DatosAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosBorr.resx">
+      <DependentUpon>DatosBorr.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosBorr4pro.resx">
+      <DependentUpon>DatosBorr4pro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosBorrAdmin.resx">
+      <DependentUpon>DatosBorrAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosIns.resx">
+      <DependentUpon>DatosIns.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosIns4pro.resx">
+      <DependentUpon>DatosIns4pro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosIns4proUser.resx">
+      <DependentUpon>DatosIns4proUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosInsAdmin.resx">
+      <DependentUpon>DatosInsAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosInsReg.resx">
+      <DependentUpon>DatosInsReg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosInsUser.resx">
+      <DependentUpon>DatosInsUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosUser.resx">
+      <DependentUpon>DatosUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorFormato.resx">
+      <DependentUpon>ErrorFormato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorFormatoMa.resx">
+      <DependentUpon>ErrorFormatoMa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorFormatoMaUser.resx">
+      <DependentUpon>ErrorFormatoMaUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorFormatoUser.resx">
+      <DependentUpon>ErrorFormatoUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorIn.resx">
+      <DependentUpon>ErrorIn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMatri.resx">
+      <DependentUpon>ErrorMatri.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMatriUser.resx">
+      <DependentUpon>ErrorMatriUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorReg.resx">
+      <DependentUpon>ErrorReg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorRUT.resx">
+      <DependentUpon>ErrorRUT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorRUTUser.resx">
+      <DependentUpon>ErrorRUTUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorUser.resx">
+      <DependentUpon>ErrorUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Errorv.resx">
+      <DependentUpon>Errorv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info.resx">
+      <DependentUpon>Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoUser.resx">
+      <DependentUpon>InfoUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuUser.resx">
+      <DependentUpon>MenuUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelDato.resx">
+      <DependentUpon>SelDato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelDato4pro.resx">
+      <DependentUpon>SelDato4pro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelDatoAdmin.resx">
+      <DependentUpon>SelDatoAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
