@@ -28,13 +28,15 @@ Public Class Login
             Me.Hide()
         Else
             ' Intenta iniciar sesión
-            con.Open()
-            Dim sql = "SELECT * FROM login WHERE user = @user AND pass = @pass"
-            Dim cmd = New MySqlCommand(sql, con)
-            cmd.Parameters.AddWithValue("@user", SiticoneRoundedTextBox1.Text)
-            cmd.Parameters.AddWithValue("@pass", SiticoneRoundedTextBox2.Text)
-            Dim dr As MySqlDataReader = cmd.ExecuteReader
             Try
+                con.Open()
+                
+                Dim sql = "SELECT * FROM login WHERE user = @user AND pass = @pass"
+                Dim cmd = New MySqlCommand(sql, con)
+                cmd.Parameters.AddWithValue("@user", SiticoneRoundedTextBox1.Text)
+                cmd.Parameters.AddWithValue("@pass", SiticoneRoundedTextBox2.Text)
+                Dim dr As MySqlDataReader = cmd.ExecuteReader
+                
                 If dr.Read Then
                     ' Si las credenciales son correctas, verifica el tipo de usuario
                     Select Case dr("user").ToString().ToLower()
@@ -54,10 +56,14 @@ Public Class Login
                     ErrorIn.Show()
                     Me.Hide()
                 End If
+            Catch ex As MySqlException
+                MessageBox.Show("No se ha podido conectar con la base de datos")
             Catch ex As Exception
-                MsgBox(ex.Message)
+                MessageBox.Show("Ha ocurrido un error inesperado: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
-                con.Close()
+                If con.State = ConnectionState.Open Then
+                    con.Close()
+                End If
             End Try
         End If
     End Sub

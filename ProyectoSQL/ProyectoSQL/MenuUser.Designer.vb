@@ -183,7 +183,7 @@ Partial Class MenuUser
         'SiticoneElipse4
         '
         Me.SiticoneElipse4.BorderRadius = 10
-        Me.SiticoneElipse4.TargetControl = Me.SiticonePanel1
+        Me.SiticoneElipse4.TargetControl = Me
         '
         'SiticoneButton7
         '

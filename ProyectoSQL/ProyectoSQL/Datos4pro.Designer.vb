@@ -86,7 +86,10 @@ Partial Class Datos4pro
         Me.SiticoneSeparator1 = New Siticone.UI.WinForms.SiticoneSeparator()
         Me.SiticoneRoundedButton5 = New Siticone.UI.WinForms.SiticoneRoundedButton()
         Me.SiticoneCheckBox1 = New Siticone.UI.WinForms.SiticoneCheckBox()
+        Me.buscar = New Siticone.UI.WinForms.SiticoneRoundedTextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.SiticonePanel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SiticonePanel1
@@ -898,7 +901,7 @@ Partial Class Datos4pro
         Me.SiticoneCheckBox1.CheckedState.FillColor = System.Drawing.Color.Red
         Me.SiticoneCheckBox1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SiticoneCheckBox1.ForeColor = System.Drawing.Color.White
-        Me.SiticoneCheckBox1.Location = New System.Drawing.Point(377, 371)
+        Me.SiticoneCheckBox1.Location = New System.Drawing.Point(564, 364)
         Me.SiticoneCheckBox1.Name = "SiticoneCheckBox1"
         Me.SiticoneCheckBox1.Size = New System.Drawing.Size(131, 21)
         Me.SiticoneCheckBox1.TabIndex = 59
@@ -909,12 +912,52 @@ Partial Class Datos4pro
         Me.SiticoneCheckBox1.UncheckedState.FillColor = System.Drawing.Color.White
         Me.SiticoneCheckBox1.UseVisualStyleBackColor = True
         '
+        'buscar
+        '
+        Me.buscar.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.buscar.DefaultText = ""
+        Me.buscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.buscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.buscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.buscar.DisabledState.Parent = Me.buscar
+        Me.buscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.buscar.FocusedState.BorderColor = System.Drawing.Color.Red
+        Me.buscar.FocusedState.Parent = Me.buscar
+        Me.buscar.ForeColor = System.Drawing.Color.Black
+        Me.buscar.HoveredState.BorderColor = System.Drawing.Color.Red
+        Me.buscar.HoveredState.Parent = Me.buscar
+        Me.buscar.IconLeft = CType(resources.GetObject("buscar.IconLeft"), System.Drawing.Image)
+        Me.buscar.Location = New System.Drawing.Point(344, 354)
+        Me.buscar.Name = "buscar"
+        Me.buscar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.buscar.PlaceholderForeColor = System.Drawing.Color.DimGray
+        Me.buscar.PlaceholderText = "Buscar"
+        Me.buscar.SelectedText = ""
+        Me.buscar.ShadowDecoration.Parent = Me.buscar
+        Me.buscar.Size = New System.Drawing.Size(188, 27)
+        Me.buscar.TabIndex = 60
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.ErrorImage = Nothing
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = Nothing
+        Me.PictureBox1.Location = New System.Drawing.Point(723, 364)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(26, 23)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 61
+        Me.PictureBox1.TabStop = False
+        '
         'Datos4pro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(876, 611)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.buscar)
         Me.Controls.Add(Me.SiticoneCheckBox1)
         Me.Controls.Add(Me.SiticoneRoundedButton5)
         Me.Controls.Add(Me.SiticoneSeparator1)
@@ -963,6 +1006,7 @@ Partial Class Datos4pro
         Me.Text = "Datos Estudiantes"
         Me.SiticonePanel1.ResumeLayout(False)
         Me.SiticonePanel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1030,4 +1074,6 @@ Partial Class Datos4pro
     Friend WithEvents NCelularA4pro As ColumnHeader
     Friend WithEvents SiticoneRoundedButton5 As Siticone.UI.WinForms.SiticoneRoundedButton
     Friend WithEvents SiticoneCheckBox1 As Siticone.UI.WinForms.SiticoneCheckBox
+    Friend WithEvents buscar As Siticone.UI.WinForms.SiticoneRoundedTextBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -84,7 +84,10 @@ Partial Class Datos4proUser
         Me.SiticoneDragControl2 = New Siticone.UI.WinForms.SiticoneDragControl(Me.components)
         Me.SiticoneElipse1 = New Siticone.UI.WinForms.SiticoneElipse(Me.components)
         Me.SiticoneElipse2 = New Siticone.UI.WinForms.SiticoneElipse(Me.components)
+        Me.buscar = New Siticone.UI.WinForms.SiticoneRoundedTextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.SiticonePanel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -142,10 +145,10 @@ Partial Class Datos4proUser
         Me.SiticoneRoundedButton5.HoveredState.ForeColor = System.Drawing.Color.White
         Me.SiticoneRoundedButton5.HoveredState.Parent = Me.SiticoneRoundedButton5
         Me.SiticoneRoundedButton5.ImageSize = New System.Drawing.Size(19, 19)
-        Me.SiticoneRoundedButton5.Location = New System.Drawing.Point(396, 346)
+        Me.SiticoneRoundedButton5.Location = New System.Drawing.Point(397, 226)
         Me.SiticoneRoundedButton5.Name = "SiticoneRoundedButton5"
         Me.SiticoneRoundedButton5.ShadowDecoration.Parent = Me.SiticoneRoundedButton5
-        Me.SiticoneRoundedButton5.Size = New System.Drawing.Size(93, 39)
+        Me.SiticoneRoundedButton5.Size = New System.Drawing.Size(93, 43)
         Me.SiticoneRoundedButton5.TabIndex = 98
         Me.SiticoneRoundedButton5.Text = "Menú"
         '
@@ -256,7 +259,7 @@ Partial Class Datos4proUser
         Me.SiticoneRoundedButton3.HoveredState.Parent = Me.SiticoneRoundedButton3
         Me.SiticoneRoundedButton3.Image = CType(resources.GetObject("SiticoneRoundedButton3.Image"), System.Drawing.Image)
         Me.SiticoneRoundedButton3.ImageSize = New System.Drawing.Size(20, 25)
-        Me.SiticoneRoundedButton3.Location = New System.Drawing.Point(397, 202)
+        Me.SiticoneRoundedButton3.Location = New System.Drawing.Point(397, 165)
         Me.SiticoneRoundedButton3.Name = "SiticoneRoundedButton3"
         Me.SiticoneRoundedButton3.ShadowDecoration.Parent = Me.SiticoneRoundedButton3
         Me.SiticoneRoundedButton3.Size = New System.Drawing.Size(93, 47)
@@ -867,12 +870,52 @@ Partial Class Datos4proUser
         Me.SiticoneElipse2.BorderRadius = 10
         Me.SiticoneElipse2.TargetControl = Me
         '
+        'buscar
+        '
+        Me.buscar.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.buscar.DefaultText = ""
+        Me.buscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.buscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.buscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.buscar.DisabledState.Parent = Me.buscar
+        Me.buscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.buscar.FocusedState.BorderColor = System.Drawing.Color.Red
+        Me.buscar.FocusedState.Parent = Me.buscar
+        Me.buscar.ForeColor = System.Drawing.Color.Black
+        Me.buscar.HoveredState.BorderColor = System.Drawing.Color.Red
+        Me.buscar.HoveredState.Parent = Me.buscar
+        Me.buscar.IconLeft = CType(resources.GetObject("buscar.IconLeft"), System.Drawing.Image)
+        Me.buscar.Location = New System.Drawing.Point(342, 354)
+        Me.buscar.Name = "buscar"
+        Me.buscar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.buscar.PlaceholderForeColor = System.Drawing.Color.DimGray
+        Me.buscar.PlaceholderText = "Buscar"
+        Me.buscar.SelectedText = ""
+        Me.buscar.ShadowDecoration.Parent = Me.buscar
+        Me.buscar.Size = New System.Drawing.Size(188, 27)
+        Me.buscar.TabIndex = 99
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.ErrorImage = Nothing
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = Nothing
+        Me.PictureBox1.Location = New System.Drawing.Point(565, 362)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(26, 23)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 100
+        Me.PictureBox1.TabStop = False
+        '
         'Datos4proUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(876, 611)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.buscar)
         Me.Controls.Add(Me.SiticoneRoundedButton5)
         Me.Controls.Add(Me.SiticoneSeparator1)
         Me.Controls.Add(Me.ListView1)
@@ -919,6 +962,7 @@ Partial Class Datos4proUser
         Me.Text = "Datos Estudiantes"
         Me.SiticonePanel1.ResumeLayout(False)
         Me.SiticonePanel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -984,4 +1028,6 @@ Partial Class Datos4proUser
     Friend WithEvents SiticoneDragControl2 As Siticone.UI.WinForms.SiticoneDragControl
     Friend WithEvents SiticoneElipse1 As Siticone.UI.WinForms.SiticoneElipse
     Friend WithEvents SiticoneElipse2 As Siticone.UI.WinForms.SiticoneElipse
+    Friend WithEvents buscar As Siticone.UI.WinForms.SiticoneRoundedTextBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

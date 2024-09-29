@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Datos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Datos
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Datos))
@@ -51,7 +51,10 @@ Partial Class Datos
         Me.SiticoneRoundedButton4 = New Siticone.UI.WinForms.SiticoneRoundedButton()
         Me.SiticoneRoundedButton5 = New Siticone.UI.WinForms.SiticoneRoundedButton()
         Me.SiticoneCheckBox1 = New Siticone.UI.WinForms.SiticoneCheckBox()
+        Me.buscar = New Siticone.UI.WinForms.SiticoneRoundedTextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.SiticonePanel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -234,7 +237,7 @@ Partial Class Datos
         Me.SiticoneRoundedButton1.HoveredState.Parent = Me.SiticoneRoundedButton1
         Me.SiticoneRoundedButton1.Image = CType(resources.GetObject("SiticoneRoundedButton1.Image"), System.Drawing.Image)
         Me.SiticoneRoundedButton1.ImageSize = New System.Drawing.Size(20, 25)
-        Me.SiticoneRoundedButton1.Location = New System.Drawing.Point(488, 362)
+        Me.SiticoneRoundedButton1.Location = New System.Drawing.Point(535, 362)
         Me.SiticoneRoundedButton1.Name = "SiticoneRoundedButton1"
         Me.SiticoneRoundedButton1.ShadowDecoration.Parent = Me.SiticoneRoundedButton1
         Me.SiticoneRoundedButton1.Size = New System.Drawing.Size(95, 33)
@@ -270,7 +273,7 @@ Partial Class Datos
         Me.SiticoneRoundedButton3.HoveredState.Parent = Me.SiticoneRoundedButton3
         Me.SiticoneRoundedButton3.Image = CType(resources.GetObject("SiticoneRoundedButton3.Image"), System.Drawing.Image)
         Me.SiticoneRoundedButton3.ImageSize = New System.Drawing.Size(19, 19)
-        Me.SiticoneRoundedButton3.Location = New System.Drawing.Point(609, 362)
+        Me.SiticoneRoundedButton3.Location = New System.Drawing.Point(636, 362)
         Me.SiticoneRoundedButton3.Name = "SiticoneRoundedButton3"
         Me.SiticoneRoundedButton3.ShadowDecoration.Parent = Me.SiticoneRoundedButton3
         Me.SiticoneRoundedButton3.Size = New System.Drawing.Size(95, 33)
@@ -355,7 +358,7 @@ Partial Class Datos
         Me.SiticoneRoundedButton4.ForeColor = System.Drawing.Color.White
         Me.SiticoneRoundedButton4.HoveredState.FillColor = System.Drawing.Color.Red
         Me.SiticoneRoundedButton4.HoveredState.Parent = Me.SiticoneRoundedButton4
-        Me.SiticoneRoundedButton4.Location = New System.Drawing.Point(711, 409)
+        Me.SiticoneRoundedButton4.Location = New System.Drawing.Point(711, 411)
         Me.SiticoneRoundedButton4.Name = "SiticoneRoundedButton4"
         Me.SiticoneRoundedButton4.ShadowDecoration.Parent = Me.SiticoneRoundedButton4
         Me.SiticoneRoundedButton4.Size = New System.Drawing.Size(77, 35)
@@ -371,7 +374,7 @@ Partial Class Datos
         Me.SiticoneRoundedButton5.ForeColor = System.Drawing.Color.White
         Me.SiticoneRoundedButton5.HoveredState.FillColor = System.Drawing.Color.Red
         Me.SiticoneRoundedButton5.HoveredState.Parent = Me.SiticoneRoundedButton5
-        Me.SiticoneRoundedButton5.Location = New System.Drawing.Point(618, 409)
+        Me.SiticoneRoundedButton5.Location = New System.Drawing.Point(618, 411)
         Me.SiticoneRoundedButton5.Name = "SiticoneRoundedButton5"
         Me.SiticoneRoundedButton5.ShadowDecoration.Parent = Me.SiticoneRoundedButton5
         Me.SiticoneRoundedButton5.Size = New System.Drawing.Size(77, 35)
@@ -387,7 +390,7 @@ Partial Class Datos
         Me.SiticoneCheckBox1.CheckedState.FillColor = System.Drawing.Color.Red
         Me.SiticoneCheckBox1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SiticoneCheckBox1.ForeColor = System.Drawing.Color.White
-        Me.SiticoneCheckBox1.Location = New System.Drawing.Point(341, 362)
+        Me.SiticoneCheckBox1.Location = New System.Drawing.Point(341, 59)
         Me.SiticoneCheckBox1.Name = "SiticoneCheckBox1"
         Me.SiticoneCheckBox1.Size = New System.Drawing.Size(131, 21)
         Me.SiticoneCheckBox1.TabIndex = 16
@@ -398,12 +401,52 @@ Partial Class Datos
         Me.SiticoneCheckBox1.UncheckedState.FillColor = System.Drawing.Color.White
         Me.SiticoneCheckBox1.UseVisualStyleBackColor = True
         '
+        'buscar
+        '
+        Me.buscar.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.buscar.DefaultText = ""
+        Me.buscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.buscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.buscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.buscar.DisabledState.Parent = Me.buscar
+        Me.buscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.buscar.FocusedState.BorderColor = System.Drawing.Color.Red
+        Me.buscar.FocusedState.Parent = Me.buscar
+        Me.buscar.ForeColor = System.Drawing.Color.Black
+        Me.buscar.HoveredState.BorderColor = System.Drawing.Color.Red
+        Me.buscar.HoveredState.Parent = Me.buscar
+        Me.buscar.IconLeft = CType(resources.GetObject("buscar.IconLeft"), System.Drawing.Image)
+        Me.buscar.Location = New System.Drawing.Point(341, 364)
+        Me.buscar.Name = "buscar"
+        Me.buscar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.buscar.PlaceholderForeColor = System.Drawing.Color.DimGray
+        Me.buscar.PlaceholderText = "Buscar"
+        Me.buscar.SelectedText = ""
+        Me.buscar.ShadowDecoration.Parent = Me.buscar
+        Me.buscar.Size = New System.Drawing.Size(188, 27)
+        Me.buscar.TabIndex = 18
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.ErrorImage = Nothing
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = Nothing
+        Me.PictureBox1.Location = New System.Drawing.Point(720, 52)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(26, 23)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 19
+        Me.PictureBox1.TabStop = False
+        '
         'Datos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(800, 455)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.buscar)
         Me.Controls.Add(Me.SiticoneCheckBox1)
         Me.Controls.Add(Me.SiticoneRoundedButton5)
         Me.Controls.Add(Me.SiticonePanel1)
@@ -427,6 +470,7 @@ Partial Class Datos
         Me.Text = "Formulario Personal"
         Me.SiticonePanel1.ResumeLayout(False)
         Me.SiticonePanel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -458,4 +502,6 @@ Partial Class Datos
     Friend WithEvents SiticoneRoundedButton4 As Siticone.UI.WinForms.SiticoneRoundedButton
     Friend WithEvents SiticoneElipse3 As Siticone.UI.WinForms.SiticoneElipse
     Friend WithEvents SiticoneCheckBox1 As Siticone.UI.WinForms.SiticoneCheckBox
+    Friend WithEvents buscar As Siticone.UI.WinForms.SiticoneRoundedTextBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -1,5 +1,6 @@
-﻿Imports System.Runtime.Remoting.Messaging
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
+Imports PdfSharp.Pdf
+Imports PdfSharp.Drawing
 
 Module Logeo
     ' Crear una nueva conexión a la base de datos
@@ -9,11 +10,16 @@ Module Logeo
 End Module
 
 Public Class Datos
-    ' Limpia los campos de texto
+    ' Limpia los campos de texto y restaura el botón de inserción
     Private Sub SiticoneRoundedButton2_Click(sender As Object, e As EventArgs) Handles SiticoneRoundedButton2.Click
+        LimpiarCampos()
+    End Sub
+
+    Private Sub LimpiarCampos()
         TextRut.Text = ""
         TextNombre.Text = ""
         TextApellido.Text = ""
+        SiticoneRoundedButton1.Text = "Agregar"
     End Sub
 
     ' Boton para cerrar la aplicación
@@ -85,7 +91,7 @@ Public Class Datos
         End If
 
         ' Verifica el formato del RUT
-        If Not System.Text.RegularExpressions.Regex.IsMatch(TextRut.Text, "^\d{8}-\d$") Then
+        If Not System.Text.RegularExpressions.Regex.IsMatch(TextRut.Text, "^\d{8}-[\dkK]$") Then
             Dim ErrorFormato As New ErrorFormato()
             ErrorFormato.Show()
             Me.Hide()
@@ -182,7 +188,11 @@ Public Class Datos
 
     ' Llama al metodo insertar al botón
     Private Sub SiticoneRoundedButton1_Click(sender As Object, e As EventArgs) Handles SiticoneRoundedButton1.Click
-        Call Insertar()
+        If SiticoneRoundedButton1.Text = "Agregar" Then
+            Call Insertar()
+        Else
+            Call ActualizarDatos()
+        End If
     End Sub
 
     ' Carga los datos al ListView al abrir el formulario
@@ -207,5 +217,160 @@ Public Class Datos
     ' Llama al metodo seleccionar todos al CheckBox
     Private Sub SiticoneCheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles SiticoneCheckBox1.CheckedChanged
         SeleccionarTodos(SiticoneCheckBox1.Checked)
+    End Sub
+
+    Private Sub buscar_TextChanged(sender As Object, e As EventArgs) Handles buscar.TextChanged
+        ' Obtener el texto de búsqueda del TextBox
+        Dim textoBusqueda As String = buscar.Text.Trim()
+
+        ' Limpiar los resultados anteriores
+        ListView1.Items.Clear()
+
+        ' Si el texto de búsqueda está vacío, mostrar todos los registros
+        If String.IsNullOrEmpty(textoBusqueda) Then
+            CargarDatos()
+            Return
+        End If
+
+        ' Crear la consulta SQL
+        Dim consulta As String = "SELECT * FROM datos_personales WHERE rut LIKE @busqueda OR nombre LIKE @busqueda OR apellido LIKE @busqueda"
+
+        ' Crear el comando y establecer los parámetros
+        Using cmd As New MySqlCommand(consulta, cone)
+            cmd.Parameters.AddWithValue("@busqueda", "%" & textoBusqueda & "%")
+
+            Try
+                ' Abrir la conexión si está cerrada
+                If cone.State = ConnectionState.Closed Then
+                    cone.Open()
+                End If
+
+                ' Ejecutar la consulta y obtener los resultados
+                Dim reader As MySqlDataReader = cmd.ExecuteReader()
+
+                ' Mostrar los resultados en el ListView
+                While reader.Read()
+                    Dim item As New ListViewItem(reader("rut").ToString())
+                    item.SubItems.Add(reader("nombre").ToString())
+                    item.SubItems.Add(reader("apellido").ToString())
+                    ListView1.Items.Add(item)
+                End While
+
+                ' Cerrar el reader
+                reader.Close()
+            Finally
+                ' Cerrar la conexión si está abierta
+                If cone.State = ConnectionState.Open Then
+                    cone.Close()
+                End If
+            End Try
+        End Using
+    End Sub
+
+    Private Sub GenerarPDF()
+        Dim documento As New PdfDocument()
+        Dim pagina As PdfPage = documento.AddPage()
+        Dim gfx As XGraphics = XGraphics.FromPdfPage(pagina)
+        Dim fuente As New XFont("Arial", 12)
+
+        ' Agrega encabezados al PDF
+        gfx.DrawString("RUT", fuente, XBrushes.Black, New XRect(40, 10, pagina.Width, 20), XStringFormats.TopLeft)
+        gfx.DrawString("Nombre", fuente, XBrushes.Black, New XRect(130, 10, pagina.Width, 20), XStringFormats.TopLeft)
+        gfx.DrawString("Apellido", fuente, XBrushes.Black, New XRect(230, 10, pagina.Width, 20), XStringFormats.TopLeft)
+
+        Dim y As Integer = 40
+        Dim numeroFila As Integer = 1
+
+        For Each item As ListViewItem In ListView1.Items
+            gfx.DrawString(numeroFila.ToString(), fuente, XBrushes.Black, New XRect(10, y, pagina.Width, 20), XStringFormats.TopLeft)
+            gfx.DrawString(item.SubItems(0).Text, fuente, XBrushes.Black, New XRect(40, y, pagina.Width, 20), XStringFormats.TopLeft)
+            gfx.DrawString(item.SubItems(1).Text, fuente, XBrushes.Black, New XRect(130, y, pagina.Width, 20), XStringFormats.TopLeft)
+            gfx.DrawString(item.SubItems(2).Text, fuente, XBrushes.Black, New XRect(230, y, pagina.Width, 20), XStringFormats.TopLeft)
+            y += 20
+            numeroFila += 1
+        Next
+
+        ' Guardar el documento
+        Dim saveFileDialog As New SaveFileDialog()
+        saveFileDialog.Filter = "Archivos PDF (*.pdf)|*.pdf"
+        saveFileDialog.FileName = "listado.pdf"
+        saveFileDialog.Title = "Guardar listado"
+
+        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+            documento.Save(saveFileDialog.FileName)
+            MessageBox.Show("PDF generado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        GenerarPDF()
+    End Sub
+
+    Private Sub EditarDatos()
+        If ListView1.SelectedItems.Count = 0 Then
+            MessageBox.Show("Por favor, seleccione un registro para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
+        End If
+
+        Dim selectedItem As ListViewItem = ListView1.SelectedItems(0)
+        rutOriginal = selectedItem.SubItems(0).Text
+        TextRut.Text = rutOriginal
+        TextNombre.Text = selectedItem.SubItems(1).Text
+        TextApellido.Text = selectedItem.SubItems(2).Text
+
+        ' Cambiar el texto del botón de insertar a "Actualizar"
+        SiticoneRoundedButton1.Text = "Actualizar"
+    End Sub
+
+    Private Sub ActualizarDatos()
+        If String.IsNullOrWhiteSpace(TextRut.Text) OrElse String.IsNullOrWhiteSpace(TextNombre.Text) OrElse String.IsNullOrWhiteSpace(TextApellido.Text) Then
+            Dim Adver As New Adver()
+            Adver.Show()
+            Me.Hide()
+            Return
+        End If
+
+        If Not System.Text.RegularExpressions.Regex.IsMatch(TextRut.Text, "^\d{8}-\d$") Then
+            Dim ErrorRUT As New ErrorRUT()
+            ErrorRUT.Show()
+            Me.Hide()
+            Return
+        End If
+
+        Dim nombreFormateado As String = StrConv(TextNombre.Text.Trim(), VbStrConv.ProperCase)
+        Dim apellidoFormateado As String = StrConv(TextApellido.Text.Trim(), VbStrConv.ProperCase)
+
+        Dim cmd As New MySqlCommand("UPDATE datos_personales SET Rut = @NuevoRut, Nombre = @Nombre, Apellido = @Apellido WHERE Rut = @RutOriginal", cone)
+        cmd.Parameters.AddWithValue("@NuevoRut", TextRut.Text)
+        cmd.Parameters.AddWithValue("@Nombre", nombreFormateado)
+        cmd.Parameters.AddWithValue("@Apellido", apellidoFormateado)
+        cmd.Parameters.AddWithValue("@RutOriginal", rutOriginal)
+
+        Try
+            If cone.State = ConnectionState.Closed Then
+                cone.Open()
+            End If
+
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Datos actualizados con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            CargarDatos()
+            LimpiarCampos()
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("El nuevo RUT ya existe en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                MessageBox.Show("Error al actualizar los datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Finally
+            If cone.State = ConnectionState.Open Then
+                cone.Close()
+            End If
+        End Try
+    End Sub
+
+    Private rutOriginal As String
+
+    Private Sub ListView1_DoubleClick(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
+        EditarDatos()
     End Sub
 End Class
