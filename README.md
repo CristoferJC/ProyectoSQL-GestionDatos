@@ -19,8 +19,11 @@ ProyectoSQL es una aplicación de Windows Forms desarrollada en Visual Basic .NE
 ## Instalación
 1. Clona este repositorio
 2. Asegúrate de tener instalado .NET Framework 4.8
-3. Importa la base de datos dentro del ProyectoSQL
+3. Importa la base de datos que está dentro del ProyectoSQL
 4. Compila y ejecuta el proyecto en Visual Studio
+
+## Video Explicativo
+[![Video de Prueba](https://img.youtube.com/vi/-ccajrKWf7c/maxresdefault.jpg)](https://www.youtube.com/watch?v=-ccajrKWf7c)
 
 ## Uso
 1. Inicia la aplicación
@@ -37,5 +40,7 @@ El proyecto está organizado en varios formularios y módulos:
 - Varios formularios adicionales para diferentes operaciones y mensajes
 
 ## Contacto
+Estudiante de 4 programación - Liceo el Pilar
+
 [Cristofer Jeldes - CristoferJC]
 [isaiasjeldescalisto@gmail.com - https://github.com/CristoferJC]
