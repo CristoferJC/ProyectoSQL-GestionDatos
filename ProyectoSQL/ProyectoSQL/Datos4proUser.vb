@@ -269,19 +269,33 @@ Public Class Datos4proUser
         ' Agrega título al PDF
         gfx.DrawString("Listado de Estudiantes y Apoderados", fuenteTitulo, XBrushes.Black, New XRect(10, 10, pagina.Width.Point, 20), XStringFormats.TopCenter)
 
-        Dim y As Double = 40
+        ' Definir constantes para el diseño
+        Const margenSuperior As Double = 40
+        Const margenInferior As Double = 40
+        Const altoFila As Double = 30
+        Const espacioEntreEstudiantes As Double = 20
+
+        Dim y As Double = margenSuperior
         Dim x As Double = 10
-        Dim anchoColumna As Double = (pagina.Width.Point - 20) / 2 ' 2 columnas por fila
+        Dim anchoColumna As Double = (pagina.Width.Point - 20) / 2
 
         ' Definir encabezados y datos
         Dim encabezados() As String = {"N. Matrícula", "RUT", "Nombres", "Apellido P", "Apellido M", "F. Nacimiento", "Dirección",
-                                       "Email", "N. Celular", "RUT (Apo)", "Nombres (Apo)", "Apellido P (Apo)", "Apellido M (Apo)", "N. Celular (Apo)"}
+        "Email", "N. Celular", "RUT (Apo)", "Nombres (Apo)", "Apellido P (Apo)", "Apellido M (Apo)", "N. Celular (Apo)"}
 
-        ' Contador para enumerar estudiantes
         Dim contadorEstudiantes As Integer = 1
 
-        ' Dibujar encabezados y datos
         For Each item As ListViewItem In ListView1.Items
+            ' Calcular el espacio necesario para este estudiante
+            Dim espacioNecesario As Double = altoFila * 7 + espacioEntreEstudiantes ' 7 filas de datos + espacio extra
+
+            ' Verificar si se necesita una nueva página
+            If y + espacioNecesario > pagina.Height.Point - margenInferior Then
+                pagina = documento.AddPage()
+                gfx = XGraphics.FromPdfPage(pagina)
+                y = margenSuperior
+            End If
+
             ' Dibujar número de estudiante
             gfx.DrawString(contadorEstudiantes.ToString() & ".", fuenteNumero, XBrushes.Black, New XRect(x, y, pagina.Width.Point, 20), XStringFormats.TopLeft)
             y += 20
@@ -299,22 +313,15 @@ Public Class Datos4proUser
 
                 ' Si es la segunda columna, pasar a la siguiente fila
                 If columna = 1 Then
-                    y += 30
+                    y += altoFila
                 End If
             Next
 
             ' Agregar espacio extra después de cada estudiante
-            y += 20
+            y += espacioEntreEstudiantes
 
             ' Incrementar el contador de estudiantes
             contadorEstudiantes += 1
-
-            ' Si llegamos al final de la página, creamos una nueva
-            If y >= pagina.Height.Point - 40 Then
-                pagina = documento.AddPage()
-                gfx = XGraphics.FromPdfPage(pagina)
-                y = 20
-            End If
         Next
 
         ' Guardar el documento

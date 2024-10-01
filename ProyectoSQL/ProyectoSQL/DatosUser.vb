@@ -66,7 +66,7 @@ Public Class DatosUser
         End If
 
         ' Verifica el formato del RUT
-        If Not System.Text.RegularExpressions.Regex.IsMatch(Rut.Text, "^\d{8}-[\dkK]$") Then
+        If Not System.Text.RegularExpressions.Regex.IsMatch(TextRut.Text, "^\d{8}-[\dkK]$") Then
             Dim ErrorFormatoUser As New ErrorFormatoUser()
             ErrorFormatoUser.Show()
             Me.Hide()

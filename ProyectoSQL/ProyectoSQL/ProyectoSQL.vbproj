@@ -68,7 +68,7 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 9.0\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="PdfSharp">
-      <HintPath>..\..\..\..\..\Downloads\PdfSharp.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\PdfSharp.dll</HintPath>
     </Reference>
     <Reference Include="Siticone.UI">
       <HintPath>..\..\..\..\Desktop\Siticone.UI.dll</HintPath>

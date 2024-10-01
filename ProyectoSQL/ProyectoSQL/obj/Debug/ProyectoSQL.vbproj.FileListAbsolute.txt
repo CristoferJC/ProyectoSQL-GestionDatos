@@ -127,7 +127,6 @@ C:\Users\4pro\source\repos\ProyectoSQL\ProyectoSQL\obj\Debug\ProyectoSQL.ErrorUs
 C:\Users\4pro\source\repos\ProyectoSQL\ProyectoSQL\obj\Debug\ProyectoSQL.Register.resources
 C:\Users\4pro\source\repos\ProyectoSQL\ProyectoSQL\obj\Debug\ProyectoSQL.SelDatoAdmin.resources
 C:\Users\4pro\source\repos\ProyectoSQL\ProyectoSQL\obj\Debug\ProyectoSQL.Adver4proUser.resources
-C:\Users\4pro\source\repos\ProyectoSQL\ProyectoSQL\bin\Debug\itextsharp.dll
 C:\Users\Isa\source\repos\ProyectoSQL\ProyectoSQL\ProyectoSQL\bin\Debug\ProyectoSQL.exe.config
 C:\Users\Isa\source\repos\ProyectoSQL\ProyectoSQL\ProyectoSQL\bin\Debug\ProyectoSQL.exe
 C:\Users\Isa\source\repos\ProyectoSQL\ProyectoSQL\ProyectoSQL\bin\Debug\ProyectoSQL.pdb
@@ -190,4 +189,4 @@ C:\Users\Isa\source\repos\ProyectoSQL\ProyectoSQL\ProyectoSQL\obj\Debug\Proyecto
 C:\Users\Isa\source\repos\ProyectoSQL\ProyectoSQL\ProyectoSQL\obj\Debug\ProyectoSQL.exe
 C:\Users\Isa\source\repos\ProyectoSQL\ProyectoSQL\ProyectoSQL\obj\Debug\ProyectoSQL.xml
 C:\Users\Isa\source\repos\ProyectoSQL\ProyectoSQL\ProyectoSQL\obj\Debug\ProyectoSQL.pdb
-C:\Users\Isa\source\repos\ProyectoSQL\ProyectoSQL\ProyectoSQL\bin\Debug\PdfSharp.dll
+C:\Users\4pro\source\repos\ProyectoSQL\ProyectoSQL\bin\Debug\PdfSharp.dll

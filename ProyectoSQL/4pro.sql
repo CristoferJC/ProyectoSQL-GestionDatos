@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-09-2024 a las 00:39:19
+-- Tiempo de generación: 12-09-2024 a las 18:25:06
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `datos_liceo` (
-  `Matricula` int(10) NOT NULL,
+  `Matricula` int(4) NOT NULL,
   `Rut` varchar(10) NOT NULL,
   `Nombres` varchar(40) NOT NULL,
   `ApellidoP` varchar(40) NOT NULL,
@@ -52,9 +52,17 @@ CREATE TABLE `datos_liceo` (
 
 CREATE TABLE `datos_personales` (
   `rut` varchar(10) NOT NULL,
-  `nombre` varchar(30) NOT NULL,
+  `nombre` varchar(40) NOT NULL,
   `apellido` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `datos_personales`
+--
+
+INSERT INTO `datos_personales` (`rut`, `nombre`, `apellido`) VALUES
+('19225696-8', 'Alejandro', 'Jimenez'),
+('22279182-0', 'Isolde', 'Yañez');
 
 -- --------------------------------------------------------
 
@@ -73,7 +81,8 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`user`, `pass`) VALUES
 ('admin', 'admin'),
-('user', 'user');
+('user', 'user'),
+('user2', 'user2');
 
 --
 -- Índices para tablas volcadas
