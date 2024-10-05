@@ -23,7 +23,7 @@ ProyectoSQL es una aplicación de Windows Forms desarrollada en Visual Basic .NE
 4. Compila y ejecuta el proyecto en Visual Studio
 
 ## Video Explicativo
-[![Video de Prueba](https://img.youtube.com/vi/-ccajrKWf7c/maxresdefault.jpg)](https://www.youtube.com/watch?v=-ccajrKWf7c)
+[![Video de Prueba](https://img.youtube.com/vi/-ccajrKWf7c/maxresdefault.jpg)](https://www.youtube.com/watch?v=mRarz-hJPww)
 
 ## Uso
 1. Inicia la aplicación
